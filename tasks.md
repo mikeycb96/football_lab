@@ -41,7 +41,7 @@ SELECT COUNT(*) FROM matches WHERE division_code = ('D1') AND (hometeam = 'Freib
 5) Find the teams which include the word "City" in their name. 
 
 ```sql
-<!-- Copy solution here -->
+SELECT DISTINCT hometeam FROM matches WHERE LOWER(hometeam) LIKE LOWER('%City%');
 
 
 ```
@@ -49,7 +49,9 @@ SELECT COUNT(*) FROM matches WHERE division_code = ('D1') AND (hometeam = 'Freib
 6) How many different teams have played in matches recorded in a French division?
 
 ```sql
-<!-- Copy solution here -->
+SELECT code FROM divisions WHERE country = 'France';
+
+SELECT COUNT(DISTINCT hometeam) FROM matches WHERE division_code = 'F1' OR division_code = 'F2';
 
 
 ```
