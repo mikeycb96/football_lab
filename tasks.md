@@ -87,9 +87,11 @@ SELECT id, fthg + ftag FROM matches WHERE division_code = 'E0' ORDER BY fthg + f
 10) In which division and which season were the most goals scored?
 
 ```sql
-<!-- Copy solution here -->
 
 
+SELECT DISTINCT *, fthg + ftag FROM matches WHERE season BETWEEN 2006 AND 2021 ORDER BY fthg +ftag DESC;
+
+```wasn't sure how to group divisions and seasons
 ```
 
 ### Useful Resources
